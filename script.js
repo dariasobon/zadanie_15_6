@@ -7,6 +7,12 @@ stopButton.addEventListener('click', () => stopwatch.stop());
 let resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', () => stopwatch.resetStopWatch());
 
+let recordButton = document.getElementById('record');
+recordButton.addEventListener('click', ()=> stopwatch.record());
+
+let resetButton = document.getElementById('resetBtn');
+resetButton.addEventListener('click' ()=> stopwatch.resetList());
+
 class Stopwatch extends React.Component {
 	constructor(display) {
 		super (display);
@@ -54,6 +60,8 @@ class Stopwatch {
 	    this.print();
 	}
 
+
+
 	calculate() {
     this.times.miliseconds += 1;
 	    if (this.times.miliseconds >= 100) {
@@ -75,7 +83,6 @@ class Stopwatch {
 		this.reset();
 		this.print();
 	}
-
 }
 
 function pad0(value) {
